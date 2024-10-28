@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Día del Físico Médico</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <style>
+        /* CSS principal */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Asegura que los márgenes y rellenos no rompan el layout */
+}
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      /*padding: 0;*/
+      background-color: #f0f8ff;
+      color: #333;
+      overflow-x: hidden;
+
+    }
+  /* Encabezado con gradiente y animación */
+  header {
+      background: linear-gradient(to right, #2c3e50, #3498db);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      position: relative;
+      z-index: 1;
+    }
+    header h1 {
+      font-size: 3em;
+      /*margin-bottom: 10px;*/
+      animation: fadeIn 2s ease-in-out;
+    }
+    header p {
+      font-size: 1.2em;
+      /*margin-top: 10px;*/
+      animation: fadeIn 3s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    section {
+      padding: 20px;
+    }
+    /*Sección QR: Estilo para dividir en dos columnas y alinear contenido */
+.qr-box {
+  display: flex;
+  justify-content: space-between; /* Espacio entre las dos columnas */
+  align-items: flex-start; /* Alinear en la parte superior */
+  padding: 20px;
+  background-color: #ffffff;
+  max-width: 1200px;
+  gap: 20px; /* Espacio entre el QR y el texto */
+    margin: 20px auto; /* Centrar la sección en la página */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}  
+  /* Estilo del contenedor QR */
+  .qr-container {
+    display: flex;
+    justify-content: center;
+  }
+    .qr-container img {
+      width: 180px;
+      height: 180px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  /* Estilo del texto de detalles del evento */
+/* Ajustar la información para que no se desborde */
+.info {
+  flex: 1; /* Ocupar el espacio disponible */
+    max-width: 600px;
+    line-height: 1.6; /* Mejor separación entre líneas */
+    padding-right: 20px;
+  }
+  .info h2 {
+    margin-bottom: 15px;
+    font-size: 2em;
+  }
+
+  .info p {
+    margin: 10px 0; /* Espacio entre párrafos */
+  }
+/* Diseño responsivo */
+
+@media (max-width: 768px) {
+  /* Adaptación para pantallas pequeñas, el layout cambia a columnas verticales */
+  .qr-box {
+    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    align-items: center;
+  }
+  .info {
+      max-width: 100%; /* Texto ocupa todo el ancho */
+      text-align: center;
+      padding-right: 0;
+    }
+}
+    /* Efecto de desvanecimiento de la imagen, Diseño del flyer mejorado */
+    .flyer-container {
+      overflow: hidden; /* Evita que se corte */
+      width: 80%; /* Ajusta el tamaño de la imagen al contenedor */
+      max-width: 400px; /* Ajusta el tamaño máximo */
+      margin: auto; /* Centra la imagen */
+      display: flex;
+      justify-content: center;
+    }
+
+    .flyer-container .flyer {
+      width: 500px;
+      height: 400px;
+      object-fit: contain; /* Muestra toda la imagen sin recorte */
+
+      background-image: url('flyer2.png');
+      background-size: cover;
+      background-position: center;
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      animation: fadeInFlyer 2s forwards, bounceFlyer 5s infinite;
+      transition: filter 0.5s ease;
+    }
+    .flyer img:hover {
+      filter: brightness(1.2) saturate(1.1);
+    }
+
+
+/* Aplicar animaciones a las figuras en movimiento */
+.moving-figure {
+  animation: rotate 5s linear infinite, pulse 3s ease-in-out infinite;
+}
+
+      /* Cronograma ajustado */
+    .schedule {
+      display: grid;
+      gap: 20px;
+      padding: 40px;
+      grid-template-columns: 1fr;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .schedule-item {
+      padding: 15px;
+      background: linear-gradient(to right, #ffffff, #e0e0e0);
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-bottom: 15px; /* Aumentar el espacio entre ítems */
+
+    }
+    .schedule-item.alt {
+      background: linear-gradient(to right, #e3f2fd, #bbdefb);
+    }
+
+      /* Botón de inscripción centrado y a la derecha */
+    .cta {
+      text-align: center;
+      margin: 30px,0;
+    }
+    .cta a {
+      background-color: #61ffb0;
+      color: rgb(10, 10, 10);
+      padding: 15px 30px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+    .cta a:hover {
+      background-color: #f1ee0e;
+      transform: scale(1.1);
+    }
+    .icon-grid {
+      display: flex;
+      justify-content: left;
+      gap: 20px;
+      flex-wrap: wrap;
+      /*margin: 20px;*/
+      margin: 10px;
+      padding-bottom: 80px;
+    }
+    .icon-grid img {
+      width: 120px;
+      height: 120px;
+      transition: transform 0.5s;
+      }
+    .icon-grid img:hover {
+      transform:scale(1.1);
+    }
+    /* Footer */
+      footer {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+ /* Estilo para las figuras en movimiento */
+ .moving-figure {
+    position: relative;
+    width: 65px; /* Ajusta el tamaño de las figuras */
+    height: 65px;
+    margin: 8px;  /*Añade espacio entre las imágenes */
+    opacity: 0.8; /* Ligera transparencia */
+    pointer-events: none; /* No bloquea la interacción con el contenido */
+    animation: float 8s ease-in-out infinite;
+    object-fit: cover;
+    /* Animación para figuras en movimiento */
+}  
+/* Animación */
+  @keyframes float {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(30px, -15px); }
+}
+
+/* Contenedor de partículas */
+  #particles-js{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvi;
+    pointer-events: none; /* Evita que interfiera con el contenido */
+    z-index: 0.5; /* Detrás del contenido */
+}
+/* Contenedor de partículas */
+#floating-figures-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvi;
+    pointer-events: none; /* Evita que interfiera con el contenido */
+    z-index: 1; /* Detrás del contenido */
+}
+</style>
+
+<body>
+  <header>
+    <h1>Día del Físico Médico</h1>
+    <p>¡Celebremos juntos la ciencia y sus grandes aportes!</p>
+  </header>
+
+  <div id="particles-js"></div>
+  <div id="floating-figures-container"></div>
+  <div id="image-container"></div>
+
+
+
+<section class="qr-box">
+  <div class="info">
+    <h2>Detalles del Evento</h2>
+    <p><strong>Fecha:</strong> 7 de noviembre 2024</p>
+    <p><strong>Lugar:</strong> Aula Chica, Dto de Física, Fac. de Ciencias Exactas, UNLP</p>
+    <p><strong>Horario:</strong> 9:00 a 13:00</p>
+    <p><strong>Objetivo:</strong> Promocionar el Día de la Física Médica, su salida laboral y sus campos de estudio.</p>
+  </div>
+
+  <div class="qr-container">
+    <img src="InscripcionQR.png" alt="QR Inscripción">
+  </div>
+</section>
+
+<section class="flyer-container">
+  <div class="flyer"></div> <!-- Contenedor del flyer -->
+  </div>
+</section>
+
+
+<section class="schedule">
+  <h2>Cronograma</h2>
+  <div class="schedule-item">
+    <strong>9:00</strong> Apertura y bienvenida: Prof. Dra. Laura Damonte
+  </div>
+  <div class="schedule-item alt">
+    <strong>9:10</strong> Estudio del sueño usando inteligencia artificial: Lic. Juan Martín Tenti
+  </div>
+  <div class="schedule-item">
+    <strong>9:30</strong> Autoridad Regulatoria Nuclear: Lic. Celeste Galarza
+  </div>
+  <div class="schedule-item alt">
+    <strong>9:50</strong> Innovación en blindaje contra radiaciones: Dra. Victoria Gallegos
+  </div>
+  <div class="schedule-item">
+    <strong>10:10</strong> Coffee break
+  </div>
+  <div class="schedule-item alt">
+    <strong>10:40</strong> Medicina Nuclear: Lic. Malena Taube
+  </div>
+  <div class="schedule-item">
+    <strong>11:00</strong> Protección Radiológica: Prof. Gustavo Sánchez
+  </div>
+  <div class="schedule-item alt">
+    <strong>11:20</strong> Mesa redonda: Surgimiento y creación de la carrera de Física Médica en la UNLP
+  </div>
+  <div class="schedule-item">
+    <strong>12:30</strong> Break
+  </div>
+</section>
+
+<div class="cta">
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSecG-vzxZeXWibdiChUJKWW8sKPNUeIi3O0yB6Ygyc3-z2PQA/viewform" target="_blank">Inscribite aquí</a>
+</div>
+
+<section class="icon-grid">
+  <a href="http://www2.fisica.unlp.edu.ar/fismed" target="_blank">
+    <img src="unlp.logo.png" alt="UNLP">
+  </a>
+  <a href="https://www.facebook.com/groups/fismedunlp" target="_blank">
+    <img src="facebookgrupo.png" alt="facebook grupo">
+  </a>
+  <a href="https://www.instagram.com/fisicamedicaunlp/" target="_blank">
+    <img src="instagram.png" alt="Instagram Física Médica">
+  </a>
+</section>
+
+<footer>
+  <p>&copy; 2024 - Universidad Nacional de La Plata - Lic. en Física Médica</p>
+</footer>
+</body>
+
+
+<script>
+  // Inserción de figuras y Configuración de figuras en movimiento
+  window.onload = function() {
+  const figureContainer = document.getElementById('floating-figures-container');
+  figureContainer.style.position = 'relative';
+  figureContainer.style.width = '200%';
+  figureContainer.style.height = '300px'; // Define el área de las figuras
+
+  const figures = ['figura1.png', 'figura2.png', 'figura3.png', 'figura4.png', 'figura5.png', 'figura6.png', 'figura7.png', 'figura8.png', 'figura9.png'];
+
+  figures.forEach((src) => {
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = src;
+    img.classList.add('moving-figure');
+    img.style.position = 'absolute';
+
+    
+    // Posición aleatoria
+    img.style.left = Math.random() * (figureContainer.offsetWidth - 80) + 'px';
+    img.style.top = Math.random() * (figureContainer.offsetHeight - 80) + 'px';
+
+    figureContainer.appendChild(img);
+  });
+};
+
+  //Para el flyer//
+  particlesJS('particles-js', {
+  particles: {
+    number: { value: 100, density: { enable: true, value_area: 800 } },
+    color: { value: "#3498db" },
+    shape: {
+      type: "circle",
+      stroke: { width: 0, color: "#000000" },
+      polygon: { "nb_sides": 6 }
+
+    },
+    opacity: {
+      value: 0.7,
+      random: false,
+      anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false },
+    },
+    size: {
+      value: 6,
+      random: true,
+      anim: { enable: false, speed: 40, size_min: 0.2, sync: false },
+    },
+    line_linked: {
+      enable: true,
+    
+    },
+    move: {
+      enable: true,
+      speed: 3,
+      direction: "none",
+      random: false,
+      straight: false,
+      out_mode: "out",
+      bounce: false,
+      attract: { "enable": false }
+
+    },
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: { enable: true, mode: "repulse" },
+      onclick: { enable: true, mode: "push" },
+    },
+    modes: {
+      repulse: { distance: 100, duration: 0.4 },
+      push: { particles_nb: 4 },
+    },
+  },
+  retina_detect: true,
+});
+particlesJS.load('particles-js', 'particles.json', function() {
+  console.log('Particles.js config loaded');
+});
+
+</script>
+
+
+</body>
+</html>
