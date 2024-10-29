@@ -3,7 +3,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - main  # Asegúrate de usar tu rama principal
+      - main  
 
 jobs:
   build:
