@@ -8,15 +8,15 @@
     "develop": "gatsby develop",
     "start": "npm run develop"
   },
-"dependencies": {
-  "react": "^18.2.0",
-  "react-dom": "^18.2.0",
-  "react-server-dom-webpack": "0.0.0-experimental"
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-server-dom-webpack": "0.0.0-experimental"
   },
   "devDependencies": {
     "@netlify/plugin-inline-functions-env": "^1.0.0"
-  }
-   "keywords": ["netlify", "plugin"],
+  },
+  "keywords": ["netlify", "plugin"],
   "author": "Venezia",
   "license": "MIT"
 }
