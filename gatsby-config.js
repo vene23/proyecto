@@ -1,9 +1,15 @@
+// @ts-check
+
+/**
+ * @type {import('gatsby').GatsbyConfig}
+ */
 module.exports = {
   siteMetadata: {
     title: "Mi Sitio Gatsby",
   },
   plugins: [],
 };
+
 import React from "react";
 
 export const onRenderBody = ({ setHeadComponents }) => {
