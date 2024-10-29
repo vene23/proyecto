@@ -13,9 +13,6 @@
     "react-dom": "^18.2.0",
     "react-server-dom-webpack": "0.0.0-experimental"
   },
-  "devDependencies": {
-    "@netlify/plugin-inline-functions-env": "^1.0.0"
-  },
   "keywords": ["netlify", "plugin"],
   "author": "Venezia",
   "license": "MIT"
