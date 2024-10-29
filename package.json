@@ -16,5 +16,8 @@
   "devDependencies": {
     "@netlify/plugin-inline-functions-env": "^1.0.0"
   }
+   "keywords": ["netlify", "plugin"],
+  "author": "Venezia",
+  "license": "MIT"
 }
 
