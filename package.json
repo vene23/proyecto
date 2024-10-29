@@ -1,18 +1,22 @@
 {
-  "name": "mi-sitio-gatsby",
-  "version": "1.0.0",
-  "private": true,
-  "main": "Imagen/Fismed.html",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "start": "npm run develop"
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-  },
-  "keywords": ["netlify", "plugin"],
-  "author": "Venezia",
-  "license": "MIT"
+    "name": "mi-sitio-gatsby",
+    "version": "1.0.0",
+    "private": true,
+    "main": "Imagen/Fismed.html",
+    "scripts": {
+        "build": "gatsby build",
+        "develop": "gatsby develop",
+        "start": "npm run develop"
+    },
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-server-dom-webpack": "0.0.1"
+    },
+    "keywords": [
+        "netlify",
+        "plugin"
+    ],
+    "author": "Venezia",
+    "license": "MIT"
 }
