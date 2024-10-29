@@ -1,7 +1,10 @@
 [build]
-  functions = "netlify/functions/"
+  command = "npm run build"
   publish = "Imagen/"
 
+[build.environment]
+  NODE_ENV = "production"
+  
 [functions]
   node_bundler = "esbuild"
 
