@@ -2,7 +2,7 @@
   "name": "mi-sitio-gatsby",
   "version": "1.0.0",
   "private": true,
-  "main": "Imagen/Fismed.html", // Cambia esto al nombre de tu archivo HTML principal
+  "main": "Imagen/Fismed.html",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
