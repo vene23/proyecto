@@ -1,12 +1,6 @@
 [build]
-  publish = "public"
-  command = "gatsby build"
+  functions = "netlify/functions/"
+  publish = "public/"
 
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Robots-Tag = "noindex, noarchive"
-    Cache-Control = "no-cache, no-store, must-revalidate"
-
-[[plugins]]
-  package = "@netlify/plugin-inline-functions-env"
+[functions]
+  node_bundler = "esbuild"
