@@ -13,7 +13,3 @@ package = "netlify-plugin-google-analytics"
 
 [[plugins]]
 package = "@netlify/plugin-netlify-cms"
-
-[[plugins]]
-package = "netlify-plugin-inline-functions-env"
-
